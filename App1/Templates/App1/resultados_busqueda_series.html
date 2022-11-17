@@ -1,0 +1,20 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+<br />
+<br />
+<h1 class="text-black fs-3 fw-bolder">Series</h1>
+<br />
+<br />
+
+<ul>
+
+    {% for serie in series %}
+        <li> {{serie.nombre}} - {{serie.genero}} - {{serie.plataforma}} - {{serie.temporadas}} </li>
+    {% endfor %}    
+</ul>
+
+
+<A HREF="{% url 'Entrega1-series' %}"> Volver a Series </A>
+{% endblock %}

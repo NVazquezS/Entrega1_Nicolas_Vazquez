@@ -1,0 +1,22 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+<br />
+<br />
+<h1 class="text-black fs-3 fw-bolder">Peliculas</h1>
+<br />
+<br />
+
+<ul>
+
+    {% for pelicula in peliculas %}
+        <li> {{pelicula.nombre}} - {{pelicula.genero}} - {{pelicula.plataforma}}  </li>
+    {% endfor %}    
+</ul>
+
+
+
+
+<A HREF="{% url 'Entrega1-peliculas' %}"> Volver a Películas </A>
+{% endblock %}

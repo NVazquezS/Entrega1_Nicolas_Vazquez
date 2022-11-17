@@ -1,0 +1,22 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+<br />
+<br />
+<h1 class="text-black fs-3 fw-bolder">Juegos</h1>
+<br />
+<br />
+
+<ul>
+
+    {% for juego in juegos %}
+        <li> {{juego.nombre}} - {{juego.genero}} - {{juego.consola}}  </li>
+    {% endfor %}    
+</ul>
+
+
+
+
+<A HREF="{% url 'Entrega1-juegos' %}"> Volver a Juegos </A>
+{% endblock %}

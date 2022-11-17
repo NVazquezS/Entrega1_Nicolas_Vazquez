@@ -1,0 +1,46 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Listado de Juegos</h2>
+                <p class="lead">Todos los juegos que jugué alguna vez.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">ID</th> -->
+        <th scope="col">Nombre</th>
+        <th scope="col">Género</th>
+        <th scope="col">Consola</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for juego in juegos %}
+        
+      <tr>
+        <!-- <th scope="row">{{juego.id}}</th> -->
+        <td>{{juego.nombre}}</td>
+        <td>{{juego.genero}}</td>
+        <td>{{juego.consola}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<br />
+<br />
+  
+
+<A HREF="{% url 'Entrega1-agregar-juego' %}"> Agregar Juego </A>&nbsp<A HREF="{% url 'Entrega1-buscar-juegos' %}"> Buscar Juego </A>
+{% endblock %}

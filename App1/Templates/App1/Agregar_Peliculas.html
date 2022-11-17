@@ -1,0 +1,35 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<form action="" method="post">
+
+    {% csrf_token %}
+	<br />
+	<br />
+    <h1 class="text-black fs-3 fw-bolder">Agregar nueva pelicula</h1>
+    <br />
+    <br />
+    <!-- {{formulario.as_p}} -->
+
+    <p>
+        Nombre <input type="text" name="nombre" >
+    </p>
+    <p>
+        Genero <input type="text" name="genero" >
+    </p>
+    <p>
+        Plataforma <input type="text" name="plataforma" >
+    </p>
+	<br />
+	<br />
+    <input type="submit" value="Agregar Pelicula">
+
+</form>
+<br />
+<br />
+<A HREF="{% url 'Entrega1-peliculas' %}"> Volver a Películas </A>
+
+{% endblock %}

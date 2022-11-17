@@ -1,0 +1,48 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Listado de Series</h2>
+                <p class="lead">Todas las series vi completas, las abandonadas no cuentan.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">ID</th> -->
+        <th scope="col">Nombre</th>
+        <th scope="col">Género</th>
+        <th scope="col">Plataforma</th>
+        <th scope="col">Temporadas</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for serie in series %}
+        
+      <tr>
+        <!-- <th scope="row">{{serie.id}}</th> -->
+        <td>{{serie.nombre}}</td>
+        <td>{{serie.genero}}</td>
+        <td>{{serie.plataforma}}</td>
+        <td>{{serie.temporadas}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<br />
+<br />
+  
+
+<A HREF="{% url 'Entrega1-agregar-serie' %}"> Agregar Serie </A>&nbsp<A HREF="{% url 'Entrega1-buscar-series' %}"> Buscar Serie </A>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<form action="" method="post">
+
+    {% csrf_token %}
+	<br />
+	<br />
+    <h1 class="text-black fs-3 fw-bolder">Agregar nuevo Juego</h1>
+
+    {{formulario.as_p}}
+
+    <p>
+        Nombre <input type="text" name="nombre" >
+    </p>
+    <p>
+        Genero <input type="text" name="genero" >
+    </p>
+    <p>
+        Plataforma <input type="text" name="consola" >
+    </p>
+
+	<br />
+	<br />
+    <input type="submit" value="Agregar juego">
+
+</form>
+<br />
+<br />
+
+<A HREF="{% url 'Entrega1-juegos' %}"> Volver a Juegos </A>
+{% endblock %}

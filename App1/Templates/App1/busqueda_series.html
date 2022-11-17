@@ -1,0 +1,23 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+<br />
+<br />
+<h1 class="text-black fs-3 fw-bolder">Buscar serie</h1>
+<br />
+<br />
+<form action="{% url 'Entrega1-buscar-series-resultados' %}" method="get">
+
+    <p>
+        Nombre <input type="text" name="nombre" >
+        <input type="submit" value="Buscar">
+    </p>
+
+
+</form>
+
+<br />
+<br />
+<A HREF="{% url 'Entrega1-series' %}"> Volver a Series </A>
+{% endblock %}

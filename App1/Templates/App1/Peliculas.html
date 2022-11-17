@@ -1,0 +1,47 @@
+{% extends "App1/index.html" %}
+{% load static %}
+{% block contenido %}
+
+
+
+<section class="py-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Listado de Peliculas</h2>
+                <p class="lead">Todas las películas que recuerdo haber visto, no necesariamente voy a recomendar todas.</p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <!-- <th scope="col">ID</th> -->
+        <th scope="col">Nombre</th>
+        <th scope="col">Género</th>
+        <th scope="col">Plataforma</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for pelicula in peliculas %}
+        
+      <tr>
+        <!-- <th scope="row">{{pelicula.id}}</th> -->
+        <td>{{pelicula.nombre}}</td>
+        <td>{{pelicula.genero}}</td>
+        <td>{{pelicula.plataforma}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<br />
+<br />
+  
+
+<A HREF="{% url 'Entrega1-agregar-peliculas' %}"> Agregar Pelicula </A>&nbsp<A HREF="{% url 'Entrega1-buscar-pelicula' %}"> Buscar Pelicula </A>
+{% endblock %}
